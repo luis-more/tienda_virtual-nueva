@@ -1,6 +1,5 @@
 <?php 
 	headerTienda($data);
-	getModal('modalCarrito',$data);
 	$arrSlider = $data['slider'];
 	$arrBanner = $data['banner'];
 	$arrProductos = $data['productos'];
@@ -30,7 +29,7 @@
 								
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
 								<a href="<?= base_url().'/tienda/categoria/'.$arrSlider[$i]['idcategoria'].'/'.$ruta; ?>" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Ver Productos
+									Ver productos
 								</a>
 							</div>
 						</div>
@@ -48,8 +47,8 @@
 		<div class="container">
 			<div class="row">
 				<?php 
-				for ($j=0; $j < count($arrBanner); $j++) { 
-					$ruta = $arrBanner[$j]['ruta'];
+				for ($j=0; $j < count($arrBanner); $j++) {
+					$ruta = $arrBanner[$j]['ruta']; 
 				 ?>
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
@@ -91,8 +90,8 @@
 			<hr>
 			<div class="row isotope-grid">
 			<?php 
-			//si hay imagen mostramos sino enviamos la imagen por defecto
-				for ($p=0; $p < count($arrProductos) ; $p++) { 
+				for ($p=0; $p < count($arrProductos) ; $p++) {
+					$rutaProducto = $arrProductos[$p]['ruta']; 
 					if(count($arrProductos[$p]['images']) > 0 ){
 						$portada = $arrProductos[$p]['images'][0]['url_image'];
 					}else{
@@ -104,14 +103,14 @@
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
-							<a href="<?= base_url().'/tienda/producto/'.$arrProductos[$p]['nombre']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+							<a href="<?= base_url().'/tienda/producto/'.$arrProductos[$p]['idproducto'].'/'.$rutaProducto; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								Ver producto
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="<?= base_url().'/tienda/producto/'.$arrProductos[$p]['nombre']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="<?= base_url().'/tienda/producto/'.$arrProductos[$p]['idproducto'].'/'.$rutaProducto; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<?= $arrProductos[$p]['nombre'] ?>
 								</a>
 

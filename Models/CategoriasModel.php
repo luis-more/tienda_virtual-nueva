@@ -74,8 +74,8 @@
 				$sql = "UPDATE categoria SET nombre = ?, descripcion = ?, portada = ?, ruta = ?, status = ? WHERE idcategoria = $this->intIdcategoria ";
 				$arrData = array($this->strCategoria, 
 								 $this->strDescripcion, 
-								 $this->strPortada, 
-								 $this->strRuta,
+								 $this->strPortada,
+								 $this->strRuta, 
 								 $this->intStatus);
 				$request = $this->update($sql,$arrData);
 			}else{

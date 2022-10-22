@@ -65,7 +65,7 @@
         						$this->strDescripcion,
         						$this->strPrecio,
         						$this->intStock,
-										$this->strRuta,
+        						$this->strRuta,
         						$this->intStatus);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
@@ -106,7 +106,7 @@
         						$this->strDescripcion,
         						$this->strPrecio,
         						$this->intStock,
-										$this->strRuta,
+        						$this->strRuta,
         						$this->intStatus);
 
 	        	$request = $this->update($sql,$arrData);

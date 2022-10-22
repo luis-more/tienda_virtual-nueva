@@ -88,7 +88,7 @@
 																		$intCategoriaId,
 																		$strPrecio, 
 																		$intStock, 
-																		$ruta, 
+																		$ruta,
 																		$intStatus );
 						}
 					}else{
@@ -101,7 +101,7 @@
 																		$intCategoriaId,
 																		$strPrecio, 
 																		$intStock, 
-																		$ruta, 
+																		$ruta,
 																		$intStatus);
 						}
 					}
@@ -153,7 +153,7 @@
 				}else{
 					$idProducto = intval($_POST['idproducto']);
 					$foto      = $_FILES['foto'];
-					$imgNombre = 'pro_'.md5(date('d-m-Y H:m:s')).'.jpg';
+					$imgNombre = 'pro_'.md5(date('d-m-Y H:i:s')).'.jpg';
 					$request_image = $this->model->insertImage($idProducto,$imgNombre);
 					if($request_image){
 						$uploadImage = uploadImage($foto,$imgNombre);
