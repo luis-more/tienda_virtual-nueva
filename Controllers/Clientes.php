@@ -5,13 +5,13 @@ class Clientes extends Controllers{
 	{
 		parent::__construct();
 		session_start();
-		session_regenerate_id(true);
+		//session_regenerate_id(true);
 		if(empty($_SESSION['login']))
 		{
 			header('Location: '.base_url().'/login');
 			die();
 		}
-		getPermisos(3);
+		getPermisos(MCLIENTES);
 	}
 
 	public function Clientes()
